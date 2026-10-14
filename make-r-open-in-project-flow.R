@@ -9,14 +9,15 @@ library(devtools)
 library(pkgdown)
 library(roxygen2)
 
+pkg <- as.package("srocsa")
 
 #### check the whole package
 ## main: load pkg document and check pkg
 ## 
-document()
-load_all()
+document(pkg)
+load_all(pkg)
 
-check(document = TRUE, vignettes = FALSE,build_args = "--no-build-vignettes")
+check(pkg,document = TRUE, vignettes = FALSE,build_args = "--no-build-vignettes")
 
 
 #### check container
@@ -123,3 +124,4 @@ cran_downloads(packages = "tteICE", when = "last-month")
 # [![CRAN status](https://www.r-pkg.org/badges/version/tteICE)](https://cran.r-project.org/package=tteICE)
 # [![CRAN downloads total](https://cranlogs.r-pkg.org/badges/grand-total/tteICE)](https://cran.r-project.org/package=tteICE)
 # [![CRAN downloads last month](https://cranlogs.r-pkg.org/badges/last-month/tteICE)](https://cran.r-project.org/package=tteICE)
+
